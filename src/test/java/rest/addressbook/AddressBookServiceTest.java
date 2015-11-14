@@ -167,7 +167,6 @@ public class AddressBookServiceTest {
 		assertEquals(mariaUpdated.getHref(), person.getHref());
 	}
 
-
 	@Test
 	public void listUsers() throws IOException {
 
