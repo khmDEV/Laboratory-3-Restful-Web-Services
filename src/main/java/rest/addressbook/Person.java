@@ -15,7 +15,7 @@ public class Person {
 	private String email;
 	private URI href;
 	private List<PhoneNumber> phoneList = new ArrayList<PhoneNumber>();
-	
+
 	public String getName() {
 		return name;
 	}
@@ -59,8 +59,21 @@ public class Person {
 	public void setHref(URI href) {
 		this.href = href;
 	}
-	
+
 	public URI getHref() {
 		return href;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof Person){
+			Person p=(Person)obj;
+			return p.getHref()==getHref()
+								&& p.getId()==getId()
+								&& p.getName()==getName()
+								&& p.getEmail()==getEmail()
+								&& p.getPhoneList()==getPhoneList();
+		}
+		return false;
 	}
 }
